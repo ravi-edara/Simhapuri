@@ -7,5 +7,6 @@ namespace SimhapuriServices.WebApi.IServices
     {
         Student GetStudent(string admissionNumber);
 
+        IEnumerable<Student> SearchStudents(string searchString);
     }
 }

@@ -36,5 +36,26 @@ namespace SimhapuriServices.WebApi.Services
 
             return null;
         }
+
+        public IEnumerable<Student> SearchStudents(string searchString)
+        {
+            List<Student> students = new List<Student>();
+            IEnumerable<Student> returnStudents = new List<Student>();
+
+            using (var reader = new StreamReader(_hostingEnvironment.WebRootPath + "/Student.csv"))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                students = csv.GetRecords<Student>().ToList();
+            }
+
+            if (students != null && students.Any())
+            {
+                returnStudents = students.Where(x => x.AdmissionNumber.Contains(searchString)
+                                                                     || x.Name.ToLower().Contains(searchString.ToLower())
+                                                                     || x.RollNo.Contains(searchString));
+            }
+
+            return returnStudents;
+        }
     }
 }
