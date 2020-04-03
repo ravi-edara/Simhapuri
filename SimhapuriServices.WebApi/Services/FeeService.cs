@@ -35,6 +35,12 @@ namespace SimhapuriServices.WebApi.Services
             if (fees != null && fees.Any() && fees.Any(x => x.AdmissionNumber == admissionNumber))
             {
                 feeDetail = _mapper.Map<FeeDto, Fee>(fees.FirstOrDefault(x => x.AdmissionNumber == admissionNumber));
+                var feesByAdmissionNumber = fees.Where(x => x.AdmissionNumber == admissionNumber);
+
+                if (feesByAdmissionNumber != null && feesByAdmissionNumber.Any())
+                {
+                    feeDetail.FeePaid = feesByAdmissionNumber.Select(x => x.FeePaid).Sum();
+                }
 
                 feeDetail.LastFeePaidDate = fees.Where(x => x.AdmissionNumber == admissionNumber)
                     .OrderByDescending(x => x.FeePaidDate).Select(x => x.FeePaidDate).FirstOrDefault();
