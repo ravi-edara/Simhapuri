@@ -7,7 +7,9 @@ namespace SimhapuriServices.Mobile.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        Students,
+        FeeDetails
     }
     public class HomeMenuItem
     {

@@ -36,6 +36,12 @@ namespace SimhapuriServices.Mobile.Views
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
+                    case (int)MenuItemType.Students:
+                        MenuPages.Add(id, new NavigationPage(new StudentsPage()));
+                        break;
+                    case (int)MenuItemType.FeeDetails:
+                        MenuPages.Add(id, new NavigationPage(new FeeDetailsPage()));
+                        break;
                 }
             }
 
