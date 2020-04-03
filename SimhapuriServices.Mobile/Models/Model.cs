@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace SimhapuriServices.Mobile.Models
@@ -13,6 +15,16 @@ namespace SimhapuriServices.Mobile.Models
 
         public string Name { get; set; }
         public string Value { get; set; }
+    }
+
+    public class DisplayObjectGroup : ObservableCollection<DisplayObject>
+    {
+        public string Name { get; private set; }
+
+        public DisplayObjectGroup(string name, List<DisplayObject> displayObjects) : base(displayObjects)
+        {
+            Name = name;
+        }
     }
 
     public class Student

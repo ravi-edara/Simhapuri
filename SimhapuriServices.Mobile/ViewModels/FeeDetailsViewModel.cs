@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,14 +15,14 @@ namespace SimhapuriServices.Mobile.ViewModels
         private Command<string> _searchCommand;
         public FeeDetailsViewModel()
         {
-            
+            FeeList = new ObservableCollection<DisplayObject>();
         }
         
         public FeeStructure FeeDetails { get; set; }
 
         public Command<string> SearchCommand => _searchCommand ?? new Command<string>(this.OnSearchCommand);
         
-        public ObservableCollection<DisplayObject> FeeList { get; set; } = new ObservableCollection<DisplayObject>();
+        public ObservableCollection<DisplayObject> FeeList { get; set; } 
 
         private async void OnSearchCommand(string obj)
         {
@@ -30,28 +31,43 @@ namespace SimhapuriServices.Mobile.ViewModels
             var responseString = await response.Content.ReadAsStringAsync();
 
             var result = Newtonsoft.Json.JsonConvert.DeserializeObject<FeeStructure>(responseString);
-            
+       
+            // TODO: This SHIT has to be done because of a nasty bug in Collection View with grouping.
             FeeList.Clear();
-            foreach(var prop in result.GetType().GetProperties()) {
-                Console.WriteLine("{0}={1}", prop.Name, prop.GetValue(result, null));
-                Console.WriteLine("{0}={1}", prop.Name,FollowPropertyPath(result, prop.Name));
-                
-                FeeList.Add(new DisplayObject(prop.Name, FollowPropertyPath(result, prop.Name)));
+            var feeDetails = GetDisplayObjects(result);
+            var studentDetails = GetDisplayObjects(result.student);
+
+            foreach (var feeDetail in feeDetails)
+            {
+                FeeList.Add(feeDetail);
             }
+
+            foreach (var studentDetail in studentDetails)
+            {
+                FeeList.Add(studentDetail);
+            }
+            this.OnPropertyChanged(nameof(FeeList));
             FeeDetails = result;
-            
         }
 
-        public static string FollowPropertyPath(object value, string path)
+        private static IEnumerable<DisplayObject> GetDisplayObjects(object result)
         {
-            Type currentType = value.GetType();
-            DisplayFormatAttribute currentDisplayFormatAttribute;
-            string currentDataFormatString = "{0}";
+            return result
+                .GetType()
+                .GetProperties()
+                .Select(prop => new DisplayObject(prop.Name, GetPropertyDisplayFormattedValue(result, prop.Name)))
+                .ToList();
+        }
 
-            foreach (string propertyName in path.Split('.'))
+        private static string GetPropertyDisplayFormattedValue(object value, string path)
+        {
+            var currentType = value.GetType();
+            var currentDataFormatString = "{0}";
+
+            foreach (var propertyName in path.Split('.'))
             {
-                PropertyInfo property = currentType.GetProperty(propertyName);
-                currentDisplayFormatAttribute = (DisplayFormatAttribute)property.GetCustomAttributes(typeof(DisplayFormatAttribute), true).FirstOrDefault();
+                var property = currentType.GetProperty(propertyName);
+                var currentDisplayFormatAttribute = (DisplayFormatAttribute)property.GetCustomAttributes(typeof(DisplayFormatAttribute), true).FirstOrDefault();
                 if (currentDisplayFormatAttribute != null)
                 {
                     currentDataFormatString = currentDisplayFormatAttribute.DataFormatString;

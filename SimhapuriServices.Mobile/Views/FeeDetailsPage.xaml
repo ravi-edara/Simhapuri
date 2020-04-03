@@ -6,9 +6,18 @@
     <ContentPage.Content>
       <StackLayout>
         <SearchBar x:Name="searchBar"
+                   Placeholder="Search for a student"
                    SearchCommand="{Binding SearchCommand}"
                    SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
-        <CollectionView ItemsSource="{Binding FeeList}">
+        <CollectionView ItemsSource="{Binding FeeList}" >
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Name}"
+                           BackgroundColor="LightGray"
+                           FontSize="Large"
+                           FontAttributes="Bold" />
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
