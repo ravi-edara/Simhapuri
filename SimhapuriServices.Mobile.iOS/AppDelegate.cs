@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-
+using System.Threading;
 using Foundation;
 using UIKit;
 
@@ -25,6 +26,9 @@ namespace SimhapuriServices.Mobile.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
+            var ci = new CultureInfo("en-IN");
+            Thread.CurrentThread.CurrentCulture = ci;
+            Thread.CurrentThread.CurrentUICulture = ci;
             return base.FinishedLaunching(app, options);
         }
     }

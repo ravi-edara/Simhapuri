@@ -37,15 +37,18 @@ namespace SimhapuriServices.Mobile.ViewModels
             var feeDetails = GetDisplayObjects(result);
             var studentDetails = GetDisplayObjects(result.student);
 
+            FeeList.Add(new DisplayObject("Student Details","adf"){IsHeader = true});
+            foreach (var studentDetail in studentDetails)
+            {
+                FeeList.Add(studentDetail);
+            }
+            
+            FeeList.Add(new DisplayObject("Fee Details","adf"){IsHeader = true});
             foreach (var feeDetail in feeDetails)
             {
                 FeeList.Add(feeDetail);
             }
 
-            foreach (var studentDetail in studentDetails)
-            {
-                FeeList.Add(studentDetail);
-            }
             this.OnPropertyChanged(nameof(FeeList));
             FeeDetails = result;
         }
@@ -55,7 +58,14 @@ namespace SimhapuriServices.Mobile.ViewModels
             return result
                 .GetType()
                 .GetProperties()
-                .Select(prop => new DisplayObject(prop.Name, GetPropertyDisplayFormattedValue(result, prop.Name)))
+                .Where(e => e.GetCustomAttributes(typeof(DisplayAttribute), true).Any())
+                .OrderBy(e =>
+                {
+                    var order = e.GetCustomAttributes(typeof(DisplayAttribute)).FirstOrDefault();
+
+                    return ((DisplayAttribute) order)?.GetOrder() ?? 0;
+                } )
+                .Select(prop => new DisplayObject(((DisplayAttribute)prop.GetCustomAttributes(typeof(DisplayAttribute)).FirstOrDefault())?.Name, GetPropertyDisplayFormattedValue(result, prop.Name)))
                 .ToList();
         }
 
