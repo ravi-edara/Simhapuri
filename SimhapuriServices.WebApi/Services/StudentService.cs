@@ -12,10 +12,12 @@ namespace SimhapuriServices.WebApi.Services
     public class StudentService : IStudentService
     {
         private readonly IHostingEnvironment _hostingEnvironment;
+        private ISharedService _sharedService;
 
-        public StudentService(IHostingEnvironment hostingEnvironment)
+        public StudentService(IHostingEnvironment hostingEnvironment, ISharedService sharedService)
         {
             _hostingEnvironment = hostingEnvironment;
+            _sharedService = sharedService;
         }
 
         public Student GetStudent(string admissionNumber)
@@ -51,11 +53,22 @@ namespace SimhapuriServices.WebApi.Services
             if (students != null && students.Any())
             {
                 returnStudents = students.Where(x => x.AdmissionNumber.Contains(searchString)
-                                                                     || x.Name.ToLower().Contains(searchString.ToLower())
-                                                                     || x.RollNo.Contains(searchString));
+                                                                     || x.FirstName.ToLower().Contains(searchString.ToLower())
+                                                                     || x.LastName.Contains(searchString));
             }
 
             return returnStudents;
+        }
+
+        public IEnumerable<Student> GetAllStudentsByClass(int classId)
+        {
+            var allStudents = _sharedService.GetAllStudents();
+            var allStudentClasses = _sharedService.GetAllStudentClass();
+
+            var studentsByClass = allStudentClasses.Where(x => x.IsActive && x.ClassId == classId);
+            var selectedStudentIdSet = studentsByClass.Select(x => x.StudentId);
+
+            return allStudents.Where(x => selectedStudentIdSet.Contains(x.Id)).OrderBy(x => x.FirstName);
         }
     }
 }

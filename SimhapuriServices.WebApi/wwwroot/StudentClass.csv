@@ -1,0 +1,24 @@
+﻿Id,StudentId,ClassId,Year,IsActive,FeeAgreed,Note
+1,1,6,2016,FALSE,6000,VIth class. Actual was 6500 but principal gave him an reduction.
+2,1,7,2017,FALSE,8000,VIIth class. Actual was 8500 but principal gave him an reduction.
+3,1,8,2018,TRUE,9500,VIIIth class. Full Fee
+4,2,6,2016,FALSE,6000,VIth class. Actual was 6500 but principal gave him an reduction.
+5,2,7,2017,TRUE,8000,VIIth class. Actual was 8500 but principal gave him an reduction.
+6,3,6,2016,TRUE,6000,VIth class Full Fee
+7,4,1,2018,FALSE,1500,1st class. Full Fee
+8,5,1,2019,TRUE,1500,Full Fee
+9,6,2,2019,TRUE,2500,Full Fee
+10,7,3,2019,TRUE,3500,Full Fee
+11,8,4,2019,TRUE,4500,Full Fee
+12,9,5,2019,TRUE,5500,Full Fee
+13,10,6,2019,TRUE,6500,Full Fee
+14,11,7,2019,TRUE,7500,Full Fee
+15,12,8,2019,TRUE,8500,Full Fee
+16,13,9,2019,TRUE,9500,Full Fee
+17,14,10,2019,TRUE,10500,Full Fee
+18,15,5,2019,TRUE,5500,Full Fee
+19,16,6,2019,TRUE,6500,Full Fee
+20,17,7,2019,TRUE,7500,Full Fee
+21,18,8,2019,TRUE,8500,Full Fee
+22,19,9,2019,TRUE,9500,Full Fee
+23,20,10,2019,TRUE,10500,Full Fee

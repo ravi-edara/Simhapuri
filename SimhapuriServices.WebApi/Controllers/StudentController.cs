@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SimhapuriServices.WebApi.IServices;
 using SimhapuriServices.WebApi.Models;
@@ -24,6 +25,14 @@ namespace SimhapuriServices.WebApi.Controllers
         {
             var students = _studentService.SearchStudents(searchString);
             return Ok(students);
+        }
+
+        [HttpGet]
+        [Route("AllStudentsByClass/{classId}")]
+        public ActionResult<Student> GetAllStudentsByClass(int classId)
+        {
+            var allStudentsByClass = _studentService.GetAllStudentsByClass(classId);
+            return Ok(allStudentsByClass);
         }
     }
 }

@@ -1,8 +1,21 @@
-﻿StudentId,AdmissionNumber,Name,ClassName,Section,RollNo,FeeTotal
-3ab2b749-5bfe-4460-845f-318685f93bdb,100,Ravi Edara,Tenth,A,1001,2500
-b271bdfe-14b8-4dc8-aa98-c1ccd7b9bf34,101,Sowjanya Y,Ninth,B,1002,3500
-4ca8dbf9-cda2-401c-b9ee-21f89c9bbbbb,102,Akhila E,Eigth,A,1003,4500
-649e4eab-6ecc-4603-933f-809267ebf157,103,SaiPavan E,Seventh,A,1004,5500
-65994b3d-1c15-4368-8184-91a71bbafd33,104,Varalakshmi E,Sixth,B,1005,6500
-e43feadf-8fa8-4ffe-98cd-5f56e3ca5aa9,105,Chandu Y,Fifth,A,1006,7500
-ff6409e5-a831-484f-b0c6-21aa42553ee0,106,Divesh Y,Fourth,B,1007,8500
+﻿Id,StudentId,FirstName,MiddleName,LastName,GuardianName,Address,MobileNo,AdmissionNumber,AdmittedDate,LeftDate
+1,,Ravi,Kiran,Edara,PrasadaRao,add,9490108014,RE2016PR,1/6/2016,01/01/1000
+2,,Sowjanya,,Yellamaraju,MohanRaju,viayaja,9866431779,SY2016MR,1/6/2016,01/01/1000
+3,,Varalakshmi,,Edara,PrasadaRao,tanuku,7866456782,VL2016PR,1/6/2016,01/01/1000
+4,,Akhila,,Edara,Varalakshmi,Bhimavaram,2736472678,AE2016VL,1/6/2016,6/9/2018
+5,,Chandu,,Yellamaraju,Hari,Nellore,982367567,CH2016HA,1/6/2016,01/01/1000
+6,,Divi,,Yellamaraju,Hari,Nellore,576676767,DI2016HA,1/6/2016,01/01/1000
+7,,SaiPavan,,Edara,Varalakshmi,Rajahmundry,546789645,SP2016VL,1/6/2016,01/01/1000
+8,,Nandini,,Edara,Ravi,Tanuku,476567565,NA2016RE,1/6/2016,01/01/1000
+9,,Abhiram,,Edara,Sowjanya,Tanuku,444465668,AR2016RE,1/6/2016,01/01/1000
+10,,aaa,,Edara,PrasadaRao,add,9490108014,aaa,1/6/2016,01/01/1000
+11,,bbb,,Yellamaraju,MohanRaju,viayaja,9866431779,b,1/6/2016,01/01/1000
+12,,ccc,,Edara,PrasadaRao,tanuku,7866456782,c,1/6/2016,01/01/1000
+13,,ddd,,Edara,Varalakshmi,Bhimavaram,2736472678,d,1/6/2016,6/9/2018
+14,,eee,,Yellamaraju,Hari,Nellore,982367567,zxc,1/6/2016,01/01/1000
+15,,fff,,Yellamaraju,Hari,Nellore,576676767,jjj,1/6/2016,01/01/1000
+16,,ggg,,Edara,Varalakshmi,Rajahmundry,546789645,dfdg,1/6/2016,01/01/1000
+17,,hhh,,Edara,Ravi,Tanuku,476567565,cbv,1/6/2016,01/01/1000
+18,,iii,,Edara,Sowjanya,Tanuku,444465668,er,1/6/2016,01/01/1000
+19,,jjj,jhjhj,Edara,PrasadaRao,add,9490108014,mhj,1/6/2016,01/01/1000
+20,,kkk,,Yellamaraju,MohanRaju,viayaja,9866431779,werwr,1/6/2016,01/01/1000
