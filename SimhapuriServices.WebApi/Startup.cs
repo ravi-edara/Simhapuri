@@ -48,6 +48,7 @@ namespace SimhapuriServices.WebApi
 
         private void RegisterServices(IServiceCollection services)
         {
+            services.AddSingleton<ISharedService, SharedService>();
             services.AddSingleton<IStudentService, StudentService>();
             services.AddSingleton<IFeeService, FeeService>();
         }

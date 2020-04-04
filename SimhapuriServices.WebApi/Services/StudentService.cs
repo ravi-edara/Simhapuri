@@ -51,8 +51,8 @@ namespace SimhapuriServices.WebApi.Services
             if (students != null && students.Any())
             {
                 returnStudents = students.Where(x => x.AdmissionNumber.Contains(searchString)
-                                                                     || x.Name.ToLower().Contains(searchString.ToLower())
-                                                                     || x.RollNo.Contains(searchString));
+                                                                     || x.FirstName.ToLower().Contains(searchString.ToLower())
+                                                                     || x.LastName.Contains(searchString));
             }
 
             return returnStudents;

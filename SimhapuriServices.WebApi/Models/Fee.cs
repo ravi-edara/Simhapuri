@@ -12,4 +12,17 @@ namespace SimhapuriServices.WebApi.Models
 
         public Student Student { get; set; }
     }
+
+    public class FeesForAllStudentsByClass
+    {
+        public string ClassName { get; set; }
+
+        public int NoOfStudents { get; set; }
+
+        public decimal TotalFee { get; set; }
+
+        public decimal TotalFeePaid { get; set; }
+
+        public decimal TotalFeeBalance { get; set; }
+    }
 }

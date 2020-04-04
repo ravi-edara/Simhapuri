@@ -6,5 +6,7 @@ namespace SimhapuriServices.WebApi.IServices
     public interface IFeeService
     {
         Fee GetFeeByStudent(string admissionNumber);
+
+        IEnumerable<FeesForAllStudentsByClass> GetFeesForAllStudentsByClass();
     }
 }

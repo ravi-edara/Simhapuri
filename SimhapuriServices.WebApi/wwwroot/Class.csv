@@ -1,4 +1,11 @@
 ﻿Id,ClassId,Name,FeeAmount
-1,aaa,Tenth,9000
-2,bbb,Ninth,8000
-3,ccc,Eigth,7000
+1,,First,1500
+2,,Second,2500
+3,,Third,3500
+4,,Fourth,4500
+5,,Fifth,5500
+6,,Sixth,6500
+7,,Seventh,7500
+8,,Eighth,8500
+9,,Ninth,9500
+10,,Tenth,10500

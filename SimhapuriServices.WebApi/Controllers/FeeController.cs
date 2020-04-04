@@ -29,5 +29,13 @@ namespace SimhapuriServices.WebApi.Controllers
             feeDetail.Student = student;
             return Ok(feeDetail);
         }
+
+        [HttpGet]
+        [Route("FeesForAllStudentsByClass")]
+        public ActionResult<Fee> GetFeesForAllStudentsByClass()
+        {
+            var allStudentsByClass = _feeService.GetFeesForAllStudentsByClass();
+            return Ok(allStudentsByClass);
+        }
     }
 }
