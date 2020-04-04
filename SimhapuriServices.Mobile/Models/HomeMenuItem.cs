@@ -6,11 +6,10 @@ namespace SimhapuriServices.Mobile.Models
 {
     public enum MenuItemType
     {
-        Browse,
-        About,
+        FeeDetails,
         Students,
-        FeeDetails
     }
+
     public class HomeMenuItem
     {
         public MenuItemType Id { get; set; }

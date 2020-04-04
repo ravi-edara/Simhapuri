@@ -21,7 +21,7 @@ namespace SimhapuriServices.Mobile.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.FeeDetails, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -30,12 +30,6 @@ namespace SimhapuriServices.Mobile.Views
             {
                 switch (id)
                 {
-                    case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                        break;
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
-                        break;
                     case (int)MenuItemType.Students:
                         MenuPages.Add(id, new NavigationPage(new StudentsPage()));
                         break;

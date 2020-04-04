@@ -15,6 +15,7 @@ namespace SimhapuriServices.Mobile.ViewModels
         private Command<string> _searchCommand;
         public FeeDetailsViewModel()
         {
+            Title = "Fee Details";
             FeeList = new ObservableCollection<DisplayObject>();
         }
         
@@ -35,13 +36,13 @@ namespace SimhapuriServices.Mobile.ViewModels
             // TODO: This SHIT has to be done because of a nasty bug in Collection View with grouping.
             FeeList.Clear();
             var feeDetails = GetDisplayObjects(result);
-            var studentDetails = GetDisplayObjects(result.student);
+            //var studentDetails = GetDisplayObjects(result.student);
 
-            FeeList.Add(new DisplayObject("Student Details","adf"){IsHeader = true});
-            foreach (var studentDetail in studentDetails)
-            {
-                FeeList.Add(studentDetail);
-            }
+            //FeeList.Add(new DisplayObject("Student Details","adf"){IsHeader = true});
+            //foreach (var studentDetail in studentDetails)
+            //{
+            //    FeeList.Add(studentDetail);
+            //}
             
             FeeList.Add(new DisplayObject("Fee Details","adf"){IsHeader = true});
             foreach (var feeDetail in feeDetails)

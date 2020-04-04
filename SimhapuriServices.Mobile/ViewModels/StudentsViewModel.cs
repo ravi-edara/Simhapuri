@@ -8,6 +8,7 @@ namespace SimhapuriServices.Mobile.ViewModels
     {
         public StudentsViewModel()
         {
+            Title = "Student Details";
         }
 
         private ObservableCollection<Student> Students { get; set; }
