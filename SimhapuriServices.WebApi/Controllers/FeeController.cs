@@ -34,8 +34,8 @@ namespace SimhapuriServices.WebApi.Controllers
         [Route("FeesForAllStudentsByClass")]
         public ActionResult<Fee> GetFeesForAllStudentsByClass()
         {
-            var allStudentsByClass = _feeService.GetFeesForAllStudentsByClass();
-            return Ok(allStudentsByClass);
+            var feesForAllStudentsByClass = _feeService.GetFeesForAllStudentsByClass();
+            return Ok(feesForAllStudentsByClass);
         }
     }
 }
