@@ -1,8 +1,5 @@
-﻿StudentId,AdmissionNumber,Name,ClassName,Section,RollNo,FeeTotal
-3ab2b749-5bfe-4460-845f-318685f93bdb,100,Ravi Edara,Tenth,A,1001,2500
-b271bdfe-14b8-4dc8-aa98-c1ccd7b9bf34,101,Sowjanya Y,Ninth,B,1002,3500
-4ca8dbf9-cda2-401c-b9ee-21f89c9bbbbb,102,Akhila E,Eigth,A,1003,4500
-649e4eab-6ecc-4603-933f-809267ebf157,103,SaiPavan E,Seventh,A,1004,5500
-65994b3d-1c15-4368-8184-91a71bbafd33,104,Varalakshmi E,Sixth,B,1005,6500
-e43feadf-8fa8-4ffe-98cd-5f56e3ca5aa9,105,Chandu Y,Fifth,A,1006,7500
-ff6409e5-a831-484f-b0c6-21aa42553ee0,106,Divesh Y,Fourth,B,1007,8500
+﻿Id,StudentId,FirstName,MiddleName,LastName,GuardianName,Address,MobileNo,AdmissionNo,AdmittedDate,LeftDate
+1,77b8b0b3-ab9b-456f-ab7a-0fdb45acfa66,Ravi,Kiran,Edara,PrasadaRao,add,9490108014,RE2016PR,1/6/2016,
+2,8b70827b-d6a0-433b-b3f4-d0e2cc4f1343,Sowjanya,,Yellamaraju,MohanRaju,viayaja,9866431779,SY2017MR,1/6/2017,
+3,dbc921ea-b574-4919-a79b-47aa724a5929,Varalakshmi,,Edara,PrasadaRao,tanuku,7866456782,VL2018PR,1/6/2018,
+4,4b633f22-62e7-4a26-a6c7-0926fba6e772,Akhila,,Edara,Suryavathi,Bhimavaram,2736472678,AE2018SV,1/6/2018,6/9/2018
