@@ -1,6 +1,7 @@
-<body>
-  <app-nav-menu></app-nav-menu>
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
-</body>
+<div *ngIf="showLoadingIndicatior" class="page-loader-wrapper">
+    <app-page-loader></app-page-loader>
+</div>
+<app-header *ngIf="!_router.url.includes('/authentication')"></app-header>
+<app-sidebar *ngIf="!_router.url.includes('/authentication')"></app-sidebar>
+<app-right-sidebar></app-right-sidebar>
+<router-outlet></router-outlet>
