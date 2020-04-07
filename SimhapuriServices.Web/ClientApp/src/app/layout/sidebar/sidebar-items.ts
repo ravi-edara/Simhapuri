@@ -32,6 +32,13 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '/tables/advance-table',
+    title: 'Fee',
+    icon: 'fas fa-rupee-sign',
+    class: '',
+    submenu: []
+  },
+  {
+    path: '/tables/advance-table',
     title: 'Advance Table',
     icon: 'far fa-list-alt',
     class: '',
